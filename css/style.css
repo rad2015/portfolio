@@ -1,0 +1,596 @@
+@font-face {
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2479807/neuzeit.woff2") format("woff2");
+  font-family: "Neuzeit";
+}
+
+/* @keyframes transitionIn {
+
+  from {
+    opacity: 0;
+    transform: rotateX(-10deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+
+} */
+
+@keyframes transitionIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+img {
+  max-width: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* background-color: #000; */
+  /* color: #fff; */
+  /* background: url(../image/background.jpg); */
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Neuzeit", sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  animation: transitionIn 0.725s;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+
+/* 상단 고정메뉴 */
+nav {
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  z-index: 999;
+}
+
+nav .navWrap {
+  padding: 0 5%;
+  height: 40px;
+}
+
+nav .navWrap ul.menu {
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px solid purple; */
+}
+
+nav .navWrap ul.menu li {
+  width: 100px;
+  /* border: 1px solid yellow; */
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+nav .navWrap ul.menu li:nth-child(2) {
+  text-align: center;
+}
+
+nav .navWrap ul.menu li:nth-child(3) {
+  text-align: right;
+}
+
+nav .navWrap ul.menu li ul.work_sub {
+  display: none;
+}
+
+
+/* 메인 */
+.hero {
+  background-color: #fff;
+}
+
+/* .hero__background {
+  position: absolute;
+  z-index: 1;
+  top: 0%;
+  height: 0%;
+  width: 100%;
+  background: #090e18;
+} */
+
+.hero__top {
+  position: relative;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* text-align: center; */
+}
+
+.hero__top h1 {
+  color: #090e1f;
+  font-size: 80px;
+  line-height: 1.1;
+  margin-bottom: 32px;
+  max-width: 600px;
+  z-index: 3;
+  position: relative;
+}
+
+@media (max-width: 960px) {
+  .hero__top h1 {
+    font-size: 32px;
+  }
+}
+
+.hero__top p {
+  mix-blend-mode: difference;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 500px;
+  margin: 0 auto;
+  font-size: 18px;
+  z-index: 3;
+  position: relative;
+}
+
+.hero__middle {
+  /* width: 100%; */
+  height: 20vh;
+  background-color: #333;
+}
+
+.hero__bottom {
+  height: 40vh;
+  /* background: url("https://images.unsplash.com/photo-1522938974444-f12497b69347?ixlib=rb-1.2.1&auto=format&fit=crop&w=3397&q=80") no-repeat center/cover; */
+  background: url("https://img.freepik.com/free-vector/gradient-glassmorphism-horizontal-banner_23-2149440108.jpg?t=st=1709542162~exp=1709545762~hmac=a27cab0fba7c74d2fceb6997a7fd36bdb09b63bddc44d81cefd0d7006922f017&w=1380") no-repeat center/cover;
+  background-attachment: fixed;
+  /* background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); */
+}
+
+/* .hero__bottom img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+} */
+
+.about {
+  background-color: #fff;
+}
+
+.about__item {
+  display: inline-block;
+  /* width: 700px; */
+  width: 1920px;
+  /* padding: 0px 40px; */
+  /* padding: 0px 5%; */
+  display: flex;
+  /* flex-direction: column; */
+}
+
+/* .about__item:nth-child(odd) img {
+  margin-bottom: 64px;
+}
+.about__item:nth-child(even) {
+  flex-direction: column-reverse;
+} */
+.about__item img {
+  object-fit: cover;
+  width: 300px;
+  height: 380px;
+}
+
+.about__item .content {
+  /* height: 50%; */
+  max-width: 1500px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  border: 1px solid red;
+}
+
+.about__item .content h3 {
+  font-size: 32px;
+  max-width: 350px;
+  line-height: 1.2;
+}
+
+.about__item .content h4 {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+  max-width: 350px;
+  line-height: 1.2;
+}
+
+.about__item .content p {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+  max-width: 350px;
+  margin-top: 8px;
+  margin-bottom: 100px;
+}
+
+/* 자기소개서 */
+.about__item .content .introduce {
+  gap: 10%;
+  columns: 2;
+}
+
+.about__item .content .introduce h3 {
+  font-size: 32px;
+  max-width: 700px;
+  line-height: 1.2;
+}
+
+.about__item .content .introduce p {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+  max-width: 700px;
+  margin-top: 8px;
+  margin-bottom: 100px;
+}
+
+.about__item .content ul {
+  display: flex;
+  flex-wrap: wrap;
+  width: 380px;
+  height: 150px;
+  border: 1px solid navy;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.about__item .content ul li {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+
+}
+
+.about__item .content ul li img {
+  width: 100%;
+}
+
+.about__item .content table.career tr {
+  text-align: center;
+}
+
+.about__item .content table.career tr td:nth-child(2) {
+  text-align-last: right;
+}
+
+.about__item .content table.career tr td:nth-child(3) {
+  width: 100px;
+}
+
+.about__item .content table.career tr td:nth-child(4) {
+  text-align-last: left;
+}
+
+.about__item .content table.career tr td {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.horizontal-scroll__section {
+  position: relative;
+  height: 490vh;
+  /* 가로스크롤 전체 길이 */
+}
+
+.horizontal-scroll__wrapper {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  /* overflow: hidden; */
+}
+
+.horizontal-scroll__content {
+  display: flex;
+  padding: 5%;
+  margin-left: 5%;
+  height: 100vh;
+  width: 600vh;
+  /* 각 컨텐츠마다의 길이 */
+  will-change: transform;
+}
+
+/* .extra-section {
+  height: 100vh;
+  background-color: #ddd;
+} */
+
+
+
+/* work */
+section#works {
+  width: 100%;
+  padding: 0 5%;
+  margin-bottom: 200px;
+  /* background-color: #ddd; */
+}
+
+
+section#works .work_intro {
+  height: 60vh;
+  /* background-color: #bbb; */
+  position: relative;
+  /* margin-bottom: 10%; */
+}
+
+section#works .work_intro .wi_inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+section#works .work_intro h1 {
+  color: #090e1f;
+  font-size: 80px;
+}
+
+section#works .work_intro p {
+  mix-blend-mode: difference;
+  color: rgba(0, 0, 0, 0.6);
+  max-width: 500px;
+  margin: 0 auto;
+  font-size: 18px;
+  z-index: 3;
+}
+
+
+
+section#works .branding,
+section#works .webApp,
+section#works .logo,
+section#works .pdPage {
+  position: relative;
+  margin-top: 5%;
+  /* border: 1px solid yellow; */
+}
+
+section#works .branding .bTitle,
+section#works .webApp .waTitle,
+section#works .logo .lgTitle,
+section#works .pdPage .pdTitle {
+  /* border: 1px solid yellow; */
+  width: 100%;
+  height: 80px;
+}
+
+section#works .branding .bTitle h2,
+section#works .webApp .waTitle h2,
+section#works .logo .lgTitle h2,
+section#works .pdPage .pdTitle h2 {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 60px;
+}
+
+section#works .branding .bTitle span,
+section#works .webApp .waTitle span,
+section#works .logo .lgTitle span,
+section#works .pdPage .pdTitle span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(217, 217, 217, 0.5);
+  backdrop-filter: blur(2.5px);
+  border-radius: 50%;
+  padding: 5px 12px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+section#works .branding ul,
+section#works .webApp ul {
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* columns: 2; */
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 60px;
+  justify-content: space-between;
+}
+
+section#works .branding ul li,
+section#works .webApp ul li {
+  /* flex: 1; */
+  width: calc(50% - 3%);
+  margin-bottom: 50px;
+}
+
+section#works .branding ul li:hover img {
+  transform: scale(1.005);
+  transition: 0.5s;
+}
+
+section#works .branding ul li img,
+section#works .webApp ul li img {
+  width: 860px;
+  height: 490px;
+  border-radius: 10px;
+  background-color: #6a6a6a;
+}
+
+/* 더보기 버튼 */
+section#works .moreBtn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+section#works .moreBtn a h2 {
+  width: 200px;
+  margin: 20px;
+  border-radius: 50px;
+  border: 1px solid #090e1f;
+}
+
+
+/* 로고 페이지 */
+section#works .logo ul {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 60px;
+  justify-content: space-between;
+}
+
+section#works .wlogo ul li {
+  width: calc(20% - 3%);
+  margin-bottom: 50px;
+}
+
+section#works .logo ul li img {
+  width: 270px;
+  height: 270px;
+  border-radius: 10px;
+  background-color: #6a6a6a;
+}
+
+
+
+section#works ul li h3 {
+  font-size: 16px;
+  margin-left: 20px;
+}
+
+
+
+
+
+/* 상세페이지 영역 슬릭 슬라이더 */
+/* Slick Slider */
+#slide {
+  width: 100%;
+  /* height: 120vh; */
+  margin: 5% auto;
+  /* border: 1px solid red; */
+  /* position: relative; */
+  /* 레이아웃 기준점 */
+}
+
+
+#slide .mainslide {
+  width: 100%;
+  /* 슬라이드 크기 */
+  height: inherit;
+  margin: 0 auto;
+  /* padding: 0 5%; */
+  display: flex;
+  /* 플렉스 구조로 변경하여야 좌우 화살표가 사이드로 생성됨 */
+  border: 1px solid orange;
+  /* position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%); */
+}
+
+/* 각 아이템의 크기 */
+#slide .mainslide .items {
+  max-width: 570px;
+  max-height: 1200px;
+  /* border: 1px solid green; */
+  margin: 0 50px;
+}
+
+#slide .mainslide .items a img {
+  width: 100%;
+  border-radius: 10px;
+  /* box-shadow: 0 5px 10px rgba(0, 0, 0, .2); */
+}
+
+/* 슬라이드 화살표 스타일 */
+.slick-arrow {
+  width: 11px;
+  height: 20px;
+  cursor: pointer;
+  text-indent: -9999px;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slick-prev {
+  background: url(../image/prev-arrow.png) no-repeat;
+  border: none;
+  color: #000;
+  position: absolute;
+  left: 0;
+  margin-left: 1px;
+}
+
+.slick-next {
+  background: url(../image/next-arrow.png) no-repeat;
+  border: none;
+  color: #000;
+  position: absolute;
+  right: 0;
+  margin-right: 1px;
+}
+
+
+/* 좌측 슬라이더 불릿 */
+.slider__nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.slider-bullet {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.slider-bullet__text {
+  color: #000;
+  font-size: 1rem;
+}
+
+.slider-bullet__line {
+  background-color: #000;
+  margin-right: 1rem;
+  height: 1px;
+  width: 1rem;
+}
